@@ -1,17 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;800&display=swap");
 body {
-  --nav-width: 200px;
-  margin: 0 0 0 var(--nav-width);
-  font-family: "Quicksand", sans-serif;
+  background-color: #010101;
+  font-family: "Dosis", sans-serif;
   font-size: 18px;
+  color: #eeeeee;
+  overflow-y: hidden;
 }
-
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: var(--nav-width);
-  height: 100vh;
-  background: #222222;
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.start-screen {
+  width: 80%;
+  margin: 0 auto;
+  background-image: url(./images/start-screen.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.logo {
+  margin: 150px 0 0 0;
+  width: 300px;
+  height: 200px;
+  background-image: url(./images/svg/logo-quiz.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.categories {
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+}
+.categories-artist,
+.categories-pictures {
+  width: 200px;
+  height: 50px;
+  border: 1px #ffffff solid;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.categories-button {
+  display: block;
+  font-size: 22px;
+  line-height: 22px;
+  text-decoration: none;
+  text-align: center;
 }
 
 .nav__link {
@@ -21,17 +61,11 @@ body {
   color: #eeeeee;
   font-weight: 500;
 }
-
-.nav__link:hover {
-  background: rgba(255, 255, 255, 0.05);
+.settings {
+  position: absolute;
+  top: 5%;
+  right: 5%;
 }
-
-#app {
-  margin: 2em;
-  line-height: 1.5;
-  font-weight: 500;
-}
-
 a {
-  color: #009579;
+  color: #ffffff;
 }

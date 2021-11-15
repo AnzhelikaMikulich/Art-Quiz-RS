@@ -1,5 +1,6 @@
-import Dashboard from "./js/views/Dashboard.js";
-import Posts from "./js/views/Posts.js";
+import StartScreen from "./js/views/StartScreen.js";
+import ArtistQuiz from "./js/views/ArtistQuiz.js";
+import PictureQuiz from "./js/views/PictureQuiz.js";
 import PostView from "./js/views/PostView.js";
 import Settings from "./js/views/Settings.js";
 
@@ -21,9 +22,10 @@ const navigateTo = url => {
 
 const router = async () => {
     const routes = [
-        { path: "/", view: Dashboard },
-        { path: "/posts", view: Posts },
-        { path: "/posts/:id", view: PostView },
+        { path: "/", view: StartScreen },
+        { path: "/artist_quiz", view: ArtistQuiz },
+        { path: "/artist_quiz/:id", view: PostView },
+        { path: "/picture_quiz", view: PictureQuiz },
         { path: "/settings", view: Settings }
     ];
 

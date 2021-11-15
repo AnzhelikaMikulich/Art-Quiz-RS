@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Art-Quiz</title>
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- <nav class="nav">
-      <a href="/" class="nav__link" data-link>Dashboard</a>
-      <a href="/artist_quiz" class="nav__link" data-link>artist_quiz</a>
-      <a href="/settings" class="nav__link" data-link>Settings</a>
-    </nav> -->
-    <div id="app">
-      <!-- <div class="container">
+import AbstractView from "./AbstractView.js";
+
+export default class extends AbstractView {
+    constructor(params) {
+        super(params);
+        this.setTitle("Start-screen");
+    }
+
+    async getHtml() {
+        return `
+             <div class="container">
         <div class="start-screen">
           <div class="logo"></div>
           <div class="categories">
@@ -50,7 +44,7 @@
             </a>
           </div>
         </div>
-      </div> -->
-    </div>
-  </body>
-</html>
+      </div>
+        `;
+    }
+}
