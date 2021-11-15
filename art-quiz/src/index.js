@@ -1,10 +1,63 @@
-import image from './images/lazy.png';
+import Dashboard from "./js/views/Dashboard.js";
+import Posts from "./js/views/Posts.js";
+import PostView from "./js/views/PostView.js";
+import Settings from "./js/views/Settings.js";
 
-const subHeader = document.createElement('h2');
-subHeader.innerHTML = 'This elements was created by js';
+const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
-const myImage = new Image();
-myImage.src = image;
+const getParams = match => {
+    const values = match.result.slice(1);
+    const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map(result => result[1]);
 
-document.body.appendChild(subHeader);
-document.body.appendChild(myImage);
+    return Object.fromEntries(keys.map((key, i) => {
+        return [key, values[i]];
+    }));
+};
+
+const navigateTo = url => {
+    history.pushState(null, null, url);
+    router();
+};
+
+const router = async () => {
+    const routes = [
+        { path: "/", view: Dashboard },
+        { path: "/posts", view: Posts },
+        { path: "/posts/:id", view: PostView },
+        { path: "/settings", view: Settings }
+    ];
+
+    // Test each route for potential match
+    const potentialMatches = routes.map(route => {
+        return {
+            route: route,
+            result: location.pathname.match(pathToRegex(route.path))
+        };
+    });
+
+    let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null);
+
+    if (!match) {
+        match = {
+            route: routes[0],
+            result: [location.pathname]
+        };
+    }
+
+    const view = new match.route.view(getParams(match));
+
+    document.querySelector("#app").innerHTML = await view.getHtml();
+};
+
+window.addEventListener("popstate", router);
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.addEventListener("click", e => {
+        if (e.target.matches("[data-link]")) {
+            e.preventDefault();
+            navigateTo(e.target.href);
+        }
+    });
+
+    router();
+});
