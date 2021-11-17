@@ -136,6 +136,11 @@ a {
 .setting-header {
   display: flex;
   justify-content: space-around;
+  font-size: 28px;
+  align-items: center;
+}
+.setting-header span {
+  cursor: pointer;
 }
 .setting-volume {
   display: flex;
@@ -164,4 +169,123 @@ a {
   border: 1px solid #eeeeee;
   background: transparent;
   color: #eeeeee;
+  cursor: pointer;
+}
+.progress-width {
+  width: 65%;
+}
+.progress-volume {
+  background: linear-gradient(
+    to right,
+    #ffbca2 0%,
+    #ffbca2 36%,
+    #fff 36%,
+    #fff 100%
+  );
+  width: 20%;
+  height: 2px;
+  border-radius: 50px;
+
+  outline: none;
+  -webkit-appearance: none;
+}
+.progress-volume::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  cursor: ew-resize;
+  background: #eeeeee;
+}
+.volume-btn {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+.volume-stop {
+  width: 25px;
+  height: 25px;
+  background-image: url(./images/svg/volume-stop.svg);
+}
+.progressbar-btn {
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 0;
+  cursor: pointer;
+}
+.volume {
+  background-image: url(./images/svg/volume.svg);
+  width: 20px;
+  height: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #eeeeee;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #ffbca2;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ffbca2;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.timer-count-btn {
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.timer-number {
+  background: transparent;
+  border: 0;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 20px;
 }
