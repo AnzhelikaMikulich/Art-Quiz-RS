@@ -4,15 +4,18 @@ body {
   font-family: "Dosis", sans-serif;
   font-size: 18px;
   color: #eeeeee;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
+
+/*=========== Start-Screen======== */
 .container {
   max-width: 1440px;
   margin: 0 auto;
 }
 .start-screen {
   width: 80%;
-  height: 100vh;
+  padding: 100px 0;
+
   margin: 0 auto;
   background-image: url(./images/start-screen.png);
   background-repeat: no-repeat;
@@ -54,7 +57,6 @@ body {
   text-decoration: none;
   text-align: center;
 }
-
 .nav__link {
   display: block;
   padding: 12px 18px;
@@ -73,7 +75,93 @@ body {
 a {
   color: #ffffff;
 }
-/* #app {
-  width: 100%;
-  height: 100%;
-} */
+
+/* ============PictureCategories/ArtistCategories */
+
+.picture-inner-container,
+.artist-inner-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.picture-block,
+.artist-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.picture-overwiew,
+.artist-overwiew {
+  display: flex;
+  justify-content: space-between;
+}
+.picture-img,
+.artist-img {
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.picture-skroll,
+.artist-skroll {
+  width: 200px;
+  height: 200px;
+  /* filter: grayscale(100%); */
+}
+.header-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header-logo {
+  width: 170px;
+  height: 100px;
+  background-image: url(./images/svg/logo-litle.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.navigation {
+  display: flex;
+  gap: 100px;
+}
+.navigation-link {
+  text-decoration: none;
+}
+
+/*========== Settings */
+.app-setting {
+  display: flex;
+  flex-direction: column;
+}
+.setting-header {
+  display: flex;
+  justify-content: space-around;
+}
+.setting-volume {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.setting-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.setting-btn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.setting-btn-app {
+  width: 290px;
+  height: 60px;
+  border-radius: 30px;
+  border: 1px solid #eeeeee;
+  background: transparent;
+  color: #eeeeee;
+}

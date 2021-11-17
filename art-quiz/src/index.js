@@ -1,65 +1,72 @@
-import StartScreen from "./js/views/StartScreen.js";
-import ArtistQuiz from "./js/views/ArtistQuiz.js";
-import PictureQuiz from "./js/views/PictureQuiz.js";
-import PostView from "./js/views/PostView.js";
-import Settings from "./js/views/Settings.js";
+// import StartScreen from "./js/views/StartScreen.js";
+// import ArtistQuiz from "./js/views/ArtistQuiz.js";
+// import PictureQuiz from "./js/views/PictureQuiz.js";
+// import PostView from "./js/views/PostView.js";
+// import Settings from "./js/views/Settings.js";
+import addCategoriesPicture from "./js/views/PictureCategories.js";
+import addCategoriesArtist from "./js/views/ArtistCategories.js"
+addCategoriesPicture()
+addCategoriesArtist()
 
-const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
-const getParams = match => {
-    const values = match.result.slice(1);
-    const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map(result => result[1]);
 
-    return Object.fromEntries(keys.map((key, i) => {
-        return [key, values[i]];
-    }));
-};
+// const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
-const navigateTo = url => {
-    history.pushState(null, null, url);
-    router();
-};
+// const getParams = match => {
+//     const values = match.result.slice(1);
+//     const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map(result => result[1]);
 
-const router = async () => {
-    const routes = [
-        { path: "/", view: StartScreen },
-        { path: "/artist_quiz", view: ArtistQuiz },
-        { path: "/artist_quiz/:id", view: PostView },
-        { path: "/picture_quiz", view: PictureQuiz },
-        { path: "/settings", view: Settings }
-    ];
+//     return Object.fromEntries(keys.map((key, i) => {
+//         return [key, values[i]];
+//     }));
+// };
 
-    // Test each route for potential match
-    const potentialMatches = routes.map(route => {
-        return {
-            route: route,
-            result: location.pathname.match(pathToRegex(route.path))
-        };
-    });
+// const navigateTo = url => {
+//     history.pushState(null, null, url);
+//     router();
+// };
 
-    let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null);
+// const router = async () => {
+//     const routes = [
+//         { path: "/", view: StartScreen },
+//         { path: "/artist_quiz", view: ArtistQuiz },
+//         // { path: "/artist_quiz/:id", view: PostView },
+//         { path: "/picture_quiz", view: PictureQuiz },
+//         { path: "/settings", view: Settings }
+//     ];
 
-    if (!match) {
-        match = {
-            route: routes[0],
-            result: [location.pathname]
-        };
-    }
+//     // Test each route for potential match
+//     const potentialMatches = routes.map(route => {
+//         return {
+//             route: route,
+//             result: location.pathname.match(pathToRegex(route.path))
+//         };
+//     });
 
-    const view = new match.route.view(getParams(match));
+//     let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null);
 
-    document.querySelector("#app").innerHTML = await view.getHtml();
-};
+//     if (!match) {
+//         match = {
+//             route: routes[0],
+//             result: [location.pathname]
+//         };
+//     }
 
-window.addEventListener("popstate", router);
+//     const view = new match.route.view(getParams(match));
 
-document.addEventListener("DOMContentLoaded", () => {
-    document.body.addEventListener("click", e => {
-        if (e.target.matches("[data-link]")) {
-            e.preventDefault();
-            navigateTo(e.target.href);
-        }
-    });
+//     document.querySelector("#app").innerHTML = await view.getHtml();
+// };
 
-    router();
-});
+// window.addEventListener("popstate", router);
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     document.body.addEventListener("click", e => {
+//         if (e.target.matches("[data-link]")) {
+//             e.preventDefault();
+//             navigateTo(e.target.href);
+//         }
+//     });
+
+//     router();
+//     addCategoriesPicture()
+// });
