@@ -127,11 +127,35 @@ a {
 .navigation-link {
   text-decoration: none;
 }
-
+@media (max-width: 1300px) {
+  .picture-skroll,
+  .artist-skroll {
+    width: 180px;
+    height: 180px;
+    /* filter: grayscale(100%); */
+  }
+}
+@media (max-width: 1200px) {
+  .picture-skroll,
+  .artist-skroll {
+    width: 160px;
+    height: 160px;
+    /* filter: grayscale(100%); */
+  }
+}
+@media (max-width: 1024px) {
+  .picture-skroll,
+  .artist-skroll {
+    width: 140px;
+    height: 140px;
+    /* filter: grayscale(100%); */
+  }
+}
 /*========== Settings */
 .app-setting {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 .setting-header {
   display: flex;
@@ -288,4 +312,7 @@ input:checked + .slider:before {
   color: #eeeeee;
   text-align: center;
   font-size: 20px;
+}
+.hide {
+  display: none;
 }

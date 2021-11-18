@@ -1,11 +1,22 @@
-export default addCategoriesPicture;
-
 const pictureInnerContainer = document.querySelector(
-  ".picture-inner-container"
+  '.picture-inner-container',
 );
 
-let arrImg = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
-let categoriesImg = ["Portrait ", "Landscape ", "Still life ", "Impressionism  ", "Expressionism ", "Avant-garde", "Renaissance", "Surrealism", "Kitsch", "Minimalism", "Interior ", "Nude"];
+const arrImg = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+const categoriesImg = [
+  'Portrait ',
+  'Landscape ',
+  'Still life ',
+  'Impressionism  ',
+  'Expressionism ',
+  'Avant-garde',
+  'Renaissance',
+  'Surrealism',
+  'Kitsch',
+  'Minimalism',
+  'Interior ',
+  'Nude',
+];
 function addCategoriesPicture() {
   arrImg.map((e, index) => {
     const img = `<div class="picture-block">
@@ -21,10 +32,8 @@ function addCategoriesPicture() {
       />
     </div>
   </div>`;
-  console.log(pictureInnerContainer)
     pictureInnerContainer.innerHTML += img;
+    return pictureInnerContainer;
   });
-  
-  
 }
-
+export default addCategoriesPicture;

@@ -1,13 +1,11 @@
-export default addCategoriesArtist;
-
 const artistInnerContainer = document.querySelector(
-  ".artist-inner-container"
+  '.artist-inner-container',
 );
 
-let arrImg = ["40", "50", "60", "70", "80", "90", "100", "110", "120", "130", "140", "150"];
-let categoriesImg = ["Portrait ", "Landscape ", "Still life ", "Impressionism  ", "Expressionism ", "Avant-garde", "Renaissance", "Surrealism", "Kitsch", "Minimalism", "Interior ", "Nude"];
+const arrImg = ['40', '50', '60', '70', '80', '90', '100', '110', '120', '130', '140', '150'];
+const categoriesImg = ['Portrait ', 'Landscape ', 'Still life ', 'Impressionism  ', 'Expressionism ', 'Avant-garde', 'Renaissance', 'Surrealism', 'Kitsch', 'Minimalism', 'Interior ', 'Nude'];
 function addCategoriesArtist() {
-  arrImg.map((e,index) => {
+  arrImg.map((e, index) => {
     const img = `<div class="artist-block">
     <div class="artist-overwiew">
       <div class="artist-categories">${categoriesImg[index]}</div>
@@ -21,10 +19,9 @@ function addCategoriesArtist() {
       />
     </div>
   </div>`;
-  
-  artistInnerContainer.innerHTML += img;
-  });
-  
-  
-}
 
+    artistInnerContainer.innerHTML += img;
+    return artistInnerContainer;
+  });
+}
+export default addCategoriesArtist;
