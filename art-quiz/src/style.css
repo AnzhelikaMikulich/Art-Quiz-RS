@@ -108,6 +108,9 @@ a {
   height: 200px;
   /* filter: grayscale(100%); */
 }
+.gray {
+  filter: grayscale(100%);
+}
 .header-section {
   display: flex;
   justify-content: space-around;
@@ -312,6 +315,121 @@ input:checked + .slider:before {
   color: #eeeeee;
   text-align: center;
   font-size: 20px;
+}
+
+/*============== Game-Artist  */
+.game-artist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+  gap: 30px;
+}
+
+.question-artist {
+  font-size: 28px;
+  font-weight: bold;
+}
+.image-artist-picture {
+  width: 20%;
+  border-radius: 50px;
+  overflow: hidden;
+  border: 3px solid #ffbca2;
+}
+.picture-question {
+  width: 100%;
+  object-fit: cover;
+}
+.answer-artist {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.answer-var {
+  width: 40%;
+  height: 40px;
+  border: 1px solid #eeeeee;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+}
+.footer-container {
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.github_block {
+  display: flex;
+  flex-direction: column;
+}
+.github {
+  display: block;
+  width: 120px;
+  height: 35px;
+  padding-left: 45px;
+  background-image: url("images/svg/github.svg");
+  background-size: 35px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  line-height: 45px;
+  color: #cbd5de;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.githubname {
+  font-size: 16px;
+  letter-spacing: -2px;
+  color: #cbd5de;
+  line-height: 0.9;
+
+  text-decoration: none;
+}
+.rss {
+  display: block;
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+  width: 30px;
+  height: 20px;
+  background-image: url("images/svg/rss.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-right: 40px;
+}
+.rss-year {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 16px;
+  letter-spacing: -2px;
+  color: #cbd5de;
+  line-height: 0.9;
+
+  transition: 0.3s;
+}
+.rss:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 .hide {
   display: none;
