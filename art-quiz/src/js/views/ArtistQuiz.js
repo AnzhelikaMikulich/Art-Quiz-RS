@@ -3,6 +3,7 @@ const artistBlock = document.querySelector('.artist-inner-container');
   const gameArtist = document.querySelector('.game-artist');
   const options = document.querySelectorAll('.answer-var'); // поля с ответами
 const dots = artistBlock.querySelectorAll('.dot');
+const buttonArtist = document.querySelector('.links-page-artist');
 let dotsArray = []; // 
 export default function artistQuizPlay() {
   
@@ -16,7 +17,10 @@ artistBlock.addEventListener('click', (e) => {
   gameArtist.classList.toggle("hide");
 
 });
-
+buttonArtist.addEventListener('click', () => {
+  artistBlock.classList.remove("hide");
+  
+})
 options.forEach((el) => {
   el.addEventListener('click', () => {
 
@@ -27,7 +31,7 @@ options.forEach((el) => {
           // окрашиваем фон ответа в зависимости от ответа (зеленый/красный)
           result ? el.style.backgroundColor = 'green' : el.style.backgroundColor = 'red';
           dotsArray.push(result);
-          showDotsGame1();
+          
       }
 
       currentQuestion++;
@@ -37,25 +41,13 @@ options.forEach((el) => {
           console.log(dotsArray);
       }
       if (countQuestions === 10) {
-       
-          // showResultPopUp();
           const indexArray = (currentQuestion - 10) / 10;
           scores.result[ indexArray ] = dotsArray;
-          // scores.saveLS();
+          
       }
   });
 });
 
   
 }
-function showDotsGame1() {
-  // красим все точки в серый
-  for (let i = 0; i < dots.length; i++) {
-      dots[ i ].style.backgroundColor = "gray";
-  }
-  // красим в красный ложные ответы и в зеленый правильные
-  for (let i = 0; i < dotsArray.length; i++) {
-      console.log(dotsArray.length);
-      dotsArray[ i ] ? dots[ i ].style.backgroundColor = "green" : dots[ i ].style.backgroundColor = "red";
-  }
-}
+

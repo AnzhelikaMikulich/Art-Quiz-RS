@@ -1,9 +1,10 @@
 import images from './images';
 export default function pictureQuizPlay() {
   const pictureBlock = document.querySelector('.picture-inner-container');
-  const gamePicture = document.querySelector('.game-pictures')
-  const options = document.querySelectorAll('.answer-var'); // поля с ответами
-const dots = pictureBlock.querySelectorAll('.dot'); // поля с ответами
+  const gamePicture = document.querySelector('.game-pictures');
+  const buttonPicture = document.querySelector('.links-page-picture');
+  const options = document.querySelectorAll('.answer-var');
+const dots = pictureBlock.querySelectorAll('.dot'); 
 
 pictureBlock.addEventListener('click', (e) => {
   
@@ -11,6 +12,11 @@ pictureBlock.addEventListener('click', (e) => {
   pictureBlock.classList.toggle("hide");
   gamePicture.classList.toggle("hide");
 });
+
+buttonPicture.addEventListener('click', () => {
+  pictureBlock.classList.remove("hide");
+  
+})
   
 }
 
