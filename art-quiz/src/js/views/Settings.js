@@ -1,6 +1,7 @@
 export default function settings() {
   const volumeStop = document.querySelector(".volume-stop"),
   homeScreen = document.querySelector('#home'),
+  settingsOff = document.querySelector('.settings-off'),
   settings = document.querySelector('#settings'),
     checkTime = document.querySelector("#check-time"),
     progressVolume = document.querySelector(".progress-volume"),
@@ -58,7 +59,11 @@ export default function settings() {
   }
 
   window.addEventListener("load", getLocalStorage);
-
+  settingsOff.addEventListener("click", () => {
+    settings.classList.toggle("hide");
+    homeScreen.classList.toggle("hide");
+  })
+  
   btnSave.addEventListener("click", () => {
     settings.classList.toggle("hide");
     homeScreen.classList.toggle("hide");
