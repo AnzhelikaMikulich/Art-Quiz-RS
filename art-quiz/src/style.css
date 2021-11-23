@@ -130,6 +130,16 @@ a {
 .navigation-link {
   text-decoration: none;
 }
+.pagination {
+  display: flex;
+  gap: 5px;
+}
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: #eeeeee;
+  border-radius: 50%;
+}
 @media (max-width: 1300px) {
   .picture-skroll,
   .artist-skroll {
