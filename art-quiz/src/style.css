@@ -57,6 +57,11 @@ body {
   text-decoration: none;
   text-align: center;
 }
+.categories-artist:hover,
+.categories-pictures:hover {
+  background-color: #ffbca2;
+  transition: 0.3s;
+}
 .nav__link {
   display: block;
   padding: 12px 18px;
@@ -199,6 +204,7 @@ a {
   justify-content: flex-end;
   gap: 20px;
 }
+
 .setting-btn-app {
   width: 290px;
   height: 60px;
@@ -522,6 +528,93 @@ input:checked + .slider:before {
 .rss:hover {
   transform: scale(1.1);
   transition: 0.3s;
+}
+
+/* =======popap */
+.popap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.8s ease 0s;
+}
+.popap:target {
+  opacity: 1;
+  visibility: visible;
+}
+.popap:target .popap-body {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+.popap-body {
+  min-height: 600px;
+  position: relative;
+  max-width: 500px;
+  margin: 20px auto;
+  background: #eeeeee;
+  color: #010101;
+  transition: all 0.8s ease 0s;
+  transform: translate(-100%, 0px);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+  border-radius: 30px;
+}
+.congratu {
+  width: 300px;
+  height: 150px;
+  text-align: center;
+}
+.resylt-score {
+  font-size: 80px;
+}
+.result-score-span {
+  font-size: 80px;
+}
+.congrat-text {
+  font-size: 30px;
+}
+.popap-btn {
+  display: flex;
+}
+.btn-popap-home {
+  width: 210px;
+  height: 62px;
+  border: 1px solid black;
+  border-radius: 50px;
+  color: #010101;
+}
+.btn-popap-again {
+  width: 210px;
+  height: 62px;
+  border: 1px solid black;
+  border-radius: 50px;
+  color: #010101;
+}
+.btn-popap:hover {
+  background-color: #ffbca2;
+}
+.popup-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.popap-area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 .hide {
   display: none;

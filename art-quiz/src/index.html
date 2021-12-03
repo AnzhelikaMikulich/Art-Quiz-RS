@@ -204,7 +204,12 @@
         <div class="time-game"></div>
         <div class="question-artist">Who is the author of this picture?</div>
         <div class="image-artist-picture">
-          <img class="picture-question" src="./images/img/0.jpg" alt="img" />
+          <img
+            class="picture-question"
+            id="question-artist-id"
+            src="./images/img/0.jpg"
+            alt="img"
+          />
         </div>
         <div class="pagination">
           <div class="dot"></div>
@@ -219,10 +224,10 @@
           <div class="dot"></div>
         </div>
         <div class="answer-artist">
-          <div class="answer-var">Павел Федотов</div>
-          <div class="answer-var">Rembrandt van Rijn</div>
-          <div class="answer-var">Leonardo da Vinci</div>
-          <div class="answer-var">Hieronymus Bosch</div>
+          <div class="answer-var var1">Павел Федотов</div>
+          <div class="answer-var var2">Rembrandt van Rijn</div>
+          <div class="answer-var var3">Leonardo da Vinci</div>
+          <div class="answer-var var4">Hieronymus Bosch</div>
         </div>
       </section>
       <section class="game-pictures hide container">
@@ -298,5 +303,22 @@
     <audio src="./images/audio/changeDifficulty.mp3"></audio>
     <audio src="./images/audio/lose.mp3"></audio>
     <audio src="./images/audio/win.mp3"></audio>
+
+    <div class="popap popap-game-end" id="popap">
+      <a href="#popap-clo" class="popap-area">X</a>
+      <div class="popap-body">
+        <div class="congratu">
+          <img src="./images/svg/congratul.svg" alt="congratul" />
+        </div>
+        <div class="resylt-score">
+          <span class="result-score-span"></span>/10
+        </div>
+        <div class="congrat-text">Congratulations!</div>
+        <div class="popap-btn">
+          <button class="btn-popap-home btn-popap">Home</button>
+          <button class="btn-popap-again btn-popap">Next Quiz</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
